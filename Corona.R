@@ -16,8 +16,7 @@ autoplot(ts_Kerala,main="Kerala Outbreak",
 #Maha=covid_19_india[covid_19_india$State.UnionTerritory=="Maharashtra",]
 #ts_Maha=ts(Maha$ConfirmedIndianNational)
 #str(ts_Maha)
-#autoplot(ts_Maha,main="Kerala Outbreak",
-         ylab="No. of confirmed indian nationals",xlab="No. of days since 30 Jan 2020",size=1.2,colour="red")
+#autoplot(ts_Maha,main="Kerala Outbreak",ylab="No. of confirmed indian nationals",xlab="No. of days since 30 Jan 2020",size=1.2,colour="red")
 Kerala_predict <- ses(ts_Kerala,h=10,level=c(80,95),alpha = 0.999)
 summary(Kerala_predict)
 autoplot(Kerala_predict,size=1.2) + autolayer(fitted(Kerala_predict),series="Fitted")
